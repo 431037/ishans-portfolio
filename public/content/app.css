@@ -1,0 +1,120 @@
+.home {
+  margin: 20px;
+  height: max-content;
+  background-image: url("/assets/images/background.jpg");
+  background-size: cover;
+}
+.home h1 {
+  /* margin: 75px; */
+  color: white;
+}
+a {
+  padding: 0;
+  text-decoration: none;
+}
+body {
+  color: white;
+}
+
+/* About */
+.jumbotron {
+  padding-top: 3rem;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron h1 {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: 0.25rem;
+}
+
+h1 {
+  color: black;
+}
+
+.form {
+  padding: 50px;
+  border-color: lightblue;
+  border-style: double;
+  border-radius: 25px;
+}
+
+label {
+  color: black;
+}
+
+@media (max-width: 479px) {
+  .home h1 {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+/* Carousel base class */
+.carousel {
+  margin-bottom: 4rem;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 32rem;
+}
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 32rem;
+}
+
+h3 {
+  padding: 35.5px;
+  color: black;
+}
+.carousel-inner p {
+  color: black;
+  font-weight: bold;
+}
+.carousel-inner h1 {
+  color: orange;
+  font-weight: bold;
+}
+
+#carousel {
+  background-color: whitesmoke;
+}
+
+h4 {
+  color: black;
+}
+
+.btn a {
+  color: white;
+}
