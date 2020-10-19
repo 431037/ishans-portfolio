@@ -1,12 +1,10 @@
 const express = require("express");
 const app = express();
 
-const expressLayouts = require("express-ejs-layouts");
-
 // Connect to db
+const mongoose = require("mongoose");
 
 const db = require("./config/keys").mongoURI;
-
 mongoose
   .connect(db, {
     useNewUrlParser: true,
@@ -16,6 +14,8 @@ mongoose
   .catch((err) => console.log(err));
 
 // Setting up view engine
+const expressLayouts = require("express-ejs-layouts");
+
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
 app.set("layout", "layouts/layout");
