@@ -61,7 +61,6 @@ module.exports.displayRegisterPage = (req, res, next) => {
   if (!req.user) {
     res.render("auth/register", {
       title: "Register",
-      user: req.user,
       messages: req.flash("registerMessage"),
       displayName: req.user ? req.user.displayName : "",
     });
@@ -89,7 +88,7 @@ module.exports.processRegisterPage = (req, res, next) => {
       });
     } else {
       return passport.authenticate("local")(req, res, () => {
-        res.redirect("/client/list");
+        res.redirect("/login");
       });
     }
   });
@@ -97,5 +96,5 @@ module.exports.processRegisterPage = (req, res, next) => {
 
 module.exports.logout = (req, res, next) => {
   req.logout();
-  res.redirect("/");
+  res.redirect("/login");
 };

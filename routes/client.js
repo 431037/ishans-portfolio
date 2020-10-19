@@ -7,7 +7,6 @@ function requireAuth(req, res, next) {
   if (!req.isAuthenticated()) {
     res.redirect("/login");
   }
-  res.locals.isAuthenticated = true;
   next();
 }
 

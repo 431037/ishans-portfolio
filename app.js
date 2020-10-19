@@ -74,7 +74,7 @@ passport.deserializeUser(User.deserializeUser());
 
 // Global variables
 app.use(function (req, res, next) {
-  res.locals.isAuthenticated = false;
+  res.locals.auth = req.isAuthenticated();
   next();
 });
 
