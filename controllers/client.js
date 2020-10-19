@@ -9,7 +9,6 @@ module.exports.clientList = (req, res, next) => {
     .sort([["username", 1]])
     .exec(function (err, clientList) {
       if (err) {
-        return console.error(err);
       } else {
         res.render("client/list", {
           title: "Client List",

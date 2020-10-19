@@ -1,5 +1,9 @@
 const express = require("express");
+const dotenv = require("dotenv");
+const flash = require("connect-flash");
+
 const app = express();
+dotenv.config();
 
 //Auth
 const session = require("express-session");
@@ -8,19 +12,15 @@ const passport = require("passport");
 // Strategies
 const passportLocal = require("passport-local");
 
-const flash = require("connect-flash");
-
-const userModel = require("./models/User");
-
 // Connect to db
 const mongoose = require("mongoose");
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
-const db = require("./config/keys").mongoURI;
+//Db stuff
 mongoose
-  .connect(db, {
+  .connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -46,10 +46,9 @@ app.use(
 ); // font-awesome
 
 // Sessions
-const secretKey = require("./config/keys").secret;
 app.use(
   session({
-    secret: secretKey,
+    secret: process.env.SECRET,
     saveUninitialized: false,
     resave: false,
   })
@@ -61,6 +60,9 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Creating a instance of a user model
+const userModel = require("./models/User");
+
 // Import user model
 const User = userModel.User;
 passport.use(User.createStrategy());
@@ -68,11 +70,9 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-///////////////
-
 // Global variables
 app.use(function (req, res, next) {
-  res.locals.auth = req.isAuthenticated();
+  res.locals.auth = req.isAuthenticated(); // I use this in-order to show a log in button or log out button on the nav
   next();
 });
 
