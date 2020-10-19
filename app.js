@@ -1,6 +1,18 @@
 const express = require("express");
 const app = express();
 
+//Auth
+const session = require("express-session");
+const passport = require("passport");
+
+// Strategies
+const passportLocal = require("passport-local");
+const localStrategy = passportLocal.Strategy;
+
+const flash = require("connect-flash");
+
+const userModel = require("./models/User");
+
 // Connect to db
 const mongoose = require("mongoose");
 
@@ -33,6 +45,35 @@ app.use(
   "/fa",
   express.static(__dirname + "/node_modules/@fortawesome/fontawesome-free/")
 ); // font-awesome
+
+//////////////////
+
+// Sessions
+const secret = require("./config/keys").secret;
+app.use(
+  session({
+    secret: "secret",
+    saveUninitialized: false,
+    resave: false,
+  })
+);
+
+app.use(flash());
+
+// Passport initialization
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Import user model
+
+const User = userModel.User;
+
+passport.use(User.createStrategy());
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+///////////////
 
 // Routes
 app.use("/", require("./routes/index"));
