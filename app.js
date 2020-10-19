@@ -75,6 +75,12 @@ passport.deserializeUser(User.deserializeUser());
 
 ///////////////
 
+// Global variables
+app.use(function (req, res, next) {
+  res.locals.isAuthenticated = false;
+  next();
+});
+
 // Routes
 app.use("/", require("./routes/index"));
 app.use("/client", require("./routes/client"));

@@ -3,7 +3,15 @@ let router = express.Router();
 
 const clientRouter = require("../controllers/client");
 
-router.get("/list", clientRouter.clientList);
+function requireAuth(req, res, next) {
+  if (!req.isAuthenticated()) {
+    res.redirect("/login");
+  }
+  res.locals.isAuthenticated = true;
+  next();
+}
+
+router.get("/list", requireAuth, clientRouter.clientList);
 
 router.get("/add", clientRouter.addPage);
 
