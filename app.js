@@ -7,7 +7,6 @@ const passport = require("passport");
 
 // Strategies
 const passportLocal = require("passport-local");
-const localStrategy = passportLocal.Strategy;
 
 const flash = require("connect-flash");
 
@@ -65,9 +64,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Import user model
-
 const User = userModel.User;
-
 passport.use(User.createStrategy());
 
 passport.serializeUser(User.serializeUser());
