@@ -45,13 +45,11 @@ app.use(
   express.static(__dirname + "/node_modules/@fortawesome/fontawesome-free/")
 ); // font-awesome
 
-//////////////////
-
 // Sessions
-const secret = require("./config/keys").secret;
+const secretKey = require("./config/keys").secret;
 app.use(
   session({
-    secret: "secret",
+    secret: secretKey,
     saveUninitialized: false,
     resave: false,
   })
