@@ -3,6 +3,18 @@ const app = express();
 
 const expressLayouts = require("express-ejs-layouts");
 
+// Connect to db
+
+const db = require("./config/keys").mongoURI;
+
+mongoose
+  .connect(db, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("MongoDB Connected"))
+  .catch((err) => console.log(err));
+
 // Setting up view engine
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
