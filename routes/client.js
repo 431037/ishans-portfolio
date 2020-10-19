@@ -53,12 +53,13 @@ router.get("/edit/:id", (req, res) => {
 
 router.post("/edit/:id", (req, res) => {
   let id = req.params.id;
+  const {username, email, number, password} = req.body;
   let updatedClient = new Client({
     _id: id,
-    username: req.body.username,
-    email: req.body.email,
-    password: req.body.password,
-    number: req.body.number,
+    username,
+    email,
+    number,
+    password,
   });
 
   Client.updateOne({_id: id}, updatedClient, (err) => {
