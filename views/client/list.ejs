@@ -1,0 +1,35 @@
+<!-- Main Content -->
+<section class="jumbotron text-center container">
+    <h1>Client List</h1>
+    <div>
+        <table class="table">
+            <thead>
+                <tr class="d-flex">
+                    <th class="text-center col-2">Username</th>
+                    <th class="text-center col-2">Number</th>
+                    <th class="text-center col-4">Email</th>
+                    <th class="text-center col-4">Buttons</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let count = 0; count < clientList.length; count++) { %>
+                <tr class="d-flex">
+                    <td class="text-center col-2"><%= clientList[count].username %></td>
+                    <td class="text-center col-2"><%= clientList[count].number %></td>
+                    <td class="text-center col-4"><%= clientList[count].email %></td>
+                    <td class="text-center col-2">
+                        <a href="edit/<%= clientList[count]._id %>" class="btn btn-primary btn-sm">
+                            <i class="fas fa-pencil-alt"></i> Edit</a>
+                    </td>
+                    <td class="text-center col-2">
+                        <a href="delete/<%= clientList[count]._id %>" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i> Delete</a>
+                    </td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+    <a href="add" class="btn btn-primary" role="button">Add Client</a>
+    <a href="/logout" class="btn btn-primary" role="button">Logout</a>
+</section>

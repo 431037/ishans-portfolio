@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title %></h1>
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter username" name="username"
+                        value=<%= data.username%> required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"
+                        value=<%= data.email%> required>
+                </div>
+
+                <div class="form-group">
+                    <label for="number">Number</label>
+                    <input type="text" class="form-control" id="number" placeholder="Enter number" name="number"
+                        value=<%= data.number%> required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter password"
+                        name="password" value=<%= data.password%> required>
+                </div>
+
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit</button>
+
+                <a href="/client/list" class="btn btn-warning">
+                    <i class="fas fa-undo"></i> Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>

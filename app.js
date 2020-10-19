@@ -4,6 +4,9 @@ const app = express();
 // Connect to db
 const mongoose = require("mongoose");
 
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+
 const db = require("./config/keys").mongoURI;
 mongoose
   .connect(db, {
@@ -32,7 +35,7 @@ app.use(
 ); // font-awesome
 
 // Routes
-app.use("/", require("./routes/index"));
+app.use("/client", require("./routes/client"));
 
 // Setting port to listen too
 const PORT = process.env.PORT || 3000;
