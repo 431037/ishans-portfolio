@@ -31,7 +31,7 @@ mongoose
 const expressLayouts = require("express-ejs-layouts");
 
 app.set("view engine", "ejs");
-app.set("views", __dirname + "/views");
+app.set("views", __dirname + "/server/views");
 app.set("layout", "layouts/layout");
 app.use(expressLayouts);
 
@@ -61,7 +61,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Creating a instance of a user model
-const userModel = require("./models/User");
+const userModel = require("./server/models/User");
 
 // Import user model
 const User = userModel.User;
@@ -77,8 +77,8 @@ app.use(function (req, res, next) {
 });
 
 // Routes
-app.use("/", require("./routes/index"));
-app.use("/client", require("./routes/client"));
+app.use("/", require("./server/routes/index"));
+app.use("/client", require("./server/routes/client"));
 
 // Setting port to listen too
 const PORT = process.env.PORT || 3000;
