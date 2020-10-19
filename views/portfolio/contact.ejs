@@ -1,0 +1,55 @@
+<!--contact-form.ejs - Ishan Gangji - 300784236 - 2020-10-08 -->
+<div class="container">
+    <section class=" about-me jumbotron text-center">
+        <div class="container">
+            <h1>Contact Me</h1>
+            <!--Table for Personal Information-->
+            <table class="table table-striped" style="margin: 0;">
+                <thead>
+                    <tr>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Email Address</th>
+                        <th scope="col">Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ishan</td>
+                        <td>Gangji</td>
+                        <td>ishangangji@gmail.com</td>
+                        <td>(416)-357-0134</td>
+                    </tr>
+            </table>
+    </section>
+    <div class="form">
+        <form>
+            <!--Creating Alert-->
+            <div id=" buttons" class="collapse in">
+                <div class="alert alert-primary" role="alert">
+                    Sent
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="textArea">Message</label>
+                <textarea class="form-control rounded-0" id="textArea" rows="5" placeholder="Enter message"></textarea>
+                <br>
+                <button type="button" class="btn btn-outline-primary" id="mainButton"
+                    onclick="window.location.href='/'">Submit</button>
+        </form>
+    </div>
+
+</div>

@@ -35,6 +35,7 @@ app.use(
 ); // font-awesome
 
 // Routes
+app.use("/", require("./routes/index"));
 app.use("/client", require("./routes/client"));
 
 // Setting port to listen too
