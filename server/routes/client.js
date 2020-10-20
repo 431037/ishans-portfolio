@@ -2,13 +2,7 @@ let express = require("express");
 let router = express.Router();
 
 const clientRouter = require("../controllers/client");
-
-function requireAuth(req, res, next) {
-  if (!req.isAuthenticated()) {
-    res.redirect("/login");
-  }
-  next();
-}
+const {requireAuth} = require("../config/auth");
 
 router.get("/list", requireAuth, clientRouter.clientList);
 

@@ -1,19 +1,6 @@
 const router = require("express").Router();
 const indexRouter = require("../controllers/index");
-
-function requireAuth(req, res, next) {
-  if (!req.isAuthenticated()) {
-    res.redirect("/login");
-  }
-  next();
-}
-
-function forwardAuth(req, res, next) {
-  if (!req.isAuthenticated()) {
-    return next();
-  }
-  res.redirect("/client/list");
-}
+const {forwardAuth} = require("../config/auth");
 
 router.get("/", indexRouter.displayHome);
 router.get("/about", indexRouter.displayAbout);

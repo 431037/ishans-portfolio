@@ -1,5 +1,4 @@
 const express = require("express");
-const router = express.Router();
 const passport = require("passport");
 
 const userModel = require("../models/User");
@@ -84,10 +83,11 @@ module.exports.displayRegisterPage = (req, res, next) => {
   }
 };
 module.exports.processRegisterPage = (req, res, next) => {
+  let {username, email, displayName} = req.body;
   let newUser = new User({
-    username: req.body.username,
-    email: req.body.email,
-    displayName: req.body.displayName,
+    username,
+    email,
+    displayName,
   });
 
   User.register(newUser, req.body.password, (err) => {

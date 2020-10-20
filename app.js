@@ -1,24 +1,21 @@
 const express = require("express");
+const app = express();
+
 const dotenv = require("dotenv");
 const flash = require("connect-flash");
 
-const app = express();
-dotenv.config();
+dotenv.config(); // Allows me to use process environment variables
 
-//Auth
+//Authentication
 const session = require("express-session");
 const passport = require("passport");
 
-// Strategies
-const passportLocal = require("passport-local");
-
-// Connect to db
-const mongoose = require("mongoose");
-
+// Body parsers
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 //Db stuff
+const mongoose = require("mongoose");
 mongoose
   .connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
@@ -45,7 +42,7 @@ app.use(
   express.static(__dirname + "/node_modules/@fortawesome/fontawesome-free/")
 ); // font-awesome
 
-// Sessions
+// Setting up sessions
 app.use(
   session({
     secret: process.env.SECRET,

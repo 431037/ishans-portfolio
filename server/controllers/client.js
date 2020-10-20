@@ -1,12 +1,9 @@
 const express = require("express");
-const router = express.Router();
-
-let Client = require("../models/Client");
-const User = require("../models/User");
+const Client = require("../models/Client");
 
 module.exports.clientList = (req, res, next) => {
   Client.find({})
-    .sort([["username", 1]])
+    .sort([["username", 1]]) // Sorts alphabetically
     .exec(function (err, clientList) {
       if (err) {
       } else {
