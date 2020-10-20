@@ -13,18 +13,30 @@ module.exports.displayHome = (req, res, next) => {
 };
 
 module.exports.displayAbout = (req, res, next) => {
-  res.render("portfolio/about", {title: " About"});
+  res.render("portfolio/about", {
+    title: " About",
+    displayName: req.user ? req.user.displayName : "",
+  });
 };
 
 module.exports.displayProjects = (req, res, next) => {
-  res.render("portfolio/projects", {title: " Projects"});
+  res.render("portfolio/projects", {
+    title: " Projects",
+    displayName: req.user ? req.user.displayName : "",
+  });
 };
 module.exports.displayServices = (req, res, next) => {
-  res.render("portfolio/services", {title: " Services"});
+  res.render("portfolio/services", {
+    title: " Services",
+    displayName: req.user ? req.user.displayName : "",
+  });
 };
 
 module.exports.displayContact = (req, res, next) => {
-  res.render("portfolio/contact", {title: " Contact"});
+  res.render("portfolio/contact", {
+    title: " Contact",
+    displayName: req.user ? req.user.displayName : "",
+  });
 };
 
 module.exports.displayLoginPage = (req, res, next) => {
