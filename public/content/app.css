@@ -118,3 +118,7 @@ h4 {
 .btn a {
   color: white;
 }
+#displayName {
+  color: red;
+  font-weight: 700;
+}
