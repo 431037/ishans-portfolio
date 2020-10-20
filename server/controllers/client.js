@@ -1,4 +1,3 @@
-const express = require("express");
 const Client = require("../models/Client");
 
 module.exports.clientList = (req, res, next) => {

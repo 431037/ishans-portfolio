@@ -1,16 +1,13 @@
 <main class="container">
 
-  <!--Message area-->
-  <% if (messages.length > 0){%>
-    <div class="alert alert-danger">
-     <%= messages %>
-    </div>
-  <%}%>
-  <div class="row">
+  <%- include('../partials/messages.ejs') %>
+
+  <div class="row">   
     <div class="offset-md-3 col-md-6">
       <form method="POST" autocomplete="off" style="margin-top: 20px;">
-        <h1 class="text-center">Login <i class="fa fa-lock" aria-hidden="true"></i>
-        </h1>
+        
+        <h1 class="text-center">Login <i class="fa fa-lock" aria-hidden="true"></i></h1>
+        
         <fieldset class="form-group">
           <label for="username">Username</label>
           <input type="text" class="form-control"
@@ -24,7 +21,6 @@
           name = "password" placeholder="Enter password" id="password" required
           >
         </fieldset>
-
 
         <a href="register">Register here!</a>
 
