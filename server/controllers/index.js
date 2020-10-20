@@ -80,6 +80,7 @@ module.exports.processRegisterPage = (req, res, next) => {
       console.log(err);
       if (err.name == "UserExistsError") {
         console.log("User exists");
+        req.flash("registerMessage", "Registration Error: User already exists");
       }
       return res.render("auth/register", {
         title: "Register",
