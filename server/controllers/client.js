@@ -13,12 +13,16 @@ module.exports.clientList = (req, res, next) => {
         res.render("client/list", {
           title: "Client List",
           clientList: clientList,
+          displayName: req.user ? req.user.displayName : "",
         });
       }
     });
 };
 module.exports.addPage = (req, res, next) => {
-  res.render("client/add", {title: "Add Client"});
+  res.render("client/add", {
+    title: "Add Client",
+    displayName: req.user ? req.user.displayName : "",
+  });
 };
 module.exports.processAddPage = (req, res, next) => {
   const {username, email, password, number} = req.body;
@@ -43,7 +47,11 @@ module.exports.editPage = (req, res, next) => {
     if (err) {
       res.end(err);
     } else {
-      res.render("client/edit", {title: "Edit Client", data: clientToEdit});
+      res.render("client/edit", {
+        title: "Edit Client",
+        data: clientToEdit,
+        displayName: req.user ? req.user.displayName : "",
+      });
     }
   });
 };

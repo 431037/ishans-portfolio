@@ -30,8 +30,12 @@
             </li>
 
             <% if(auth) {%>
+                <li class="nav-item" style="border: solid; border-radius: 40px; border-color: pink;"><a href="/client/list" class="nav-link">
+                     <%= displayName %></a>
+                </li>
                 <li class="nav-item"><a href="/logout" class="nav-link">
-                    Logout <i class="fas fa-lg fa-sign-out-alt"></i></a></li>
+                    Logout <i class="fas fa-lg fa-sign-out-alt"></i></a>
+                </li>
               <% } else { %>
                 <li class="nav-item"><a href="/login" class="nav-link">
                  Login <i class="fas fa-lg fa-sign-in-alt"></i></a></li>
