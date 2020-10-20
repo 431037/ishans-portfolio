@@ -6,7 +6,10 @@ const userModel = require("../models/User");
 const User = userModel.User;
 
 module.exports.displayHome = (req, res, next) => {
-  res.render("portfolio/home", {title: " Home Page"});
+  res.render("portfolio/home", {
+    title: " Home Page",
+    displayName: req.user ? req.user.displayName : "",
+  });
 };
 
 module.exports.displayAbout = (req, res, next) => {
