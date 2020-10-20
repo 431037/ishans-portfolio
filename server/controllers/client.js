@@ -18,12 +18,14 @@ module.exports.clientList = (req, res, next) => {
       }
     });
 };
+
 module.exports.addPage = (req, res, next) => {
   res.render("client/add", {
     title: "Add Client",
     displayName: req.user ? req.user.displayName : "",
   });
 };
+
 module.exports.processAddPage = (req, res, next) => {
   const {username, email, password, number} = req.body;
   let newClient = new Client({
