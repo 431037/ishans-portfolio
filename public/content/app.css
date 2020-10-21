@@ -1,19 +1,5 @@
-.home {
-  margin: 20px;
-  height: max-content;
-  background-image: url("/assets/images/background.jpg");
-  background-size: cover;
-}
-.home h1 {
-  /* margin: 75px; */
-  color: white;
-}
-a {
-  padding: 0;
-  text-decoration: none;
-}
-body {
-  color: white;
+h1 {
+  color: black;
 }
 
 /* About */
@@ -22,30 +8,38 @@ body {
   margin-bottom: 20px;
   background-color: #fff;
 }
-
-.jumbotron p:last-child {
-  margin-bottom: 0;
-}
-
-.jumbotron h1 {
-  font-weight: 300;
-}
-
 .jumbotron .container {
   max-width: 40rem;
 }
+.jumbotron {
+  padding-top: 6rem;
+}
+
+/*HO*/
+.home {
+  margin: 20px;
+  height: max-content;
+  background-image: url("/assets/images/background.jpg");
+  background-size: cover;
+}
+
+.home h1 {
+  /* margin: 75px; */
+  color: yellow;
+}
+
+.home p {
+  color: white;
+}
+.jumbotron .home {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+/*-------------------------------------------------*/
 
 footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
-}
-
-footer p {
-  margin-bottom: 0.25rem;
-}
-
-h1 {
-  color: black;
 }
 
 form {
@@ -59,21 +53,10 @@ label {
   color: black;
 }
 
-@media (max-width: 479px) {
-  .home h1 {
-    font-size: 25px;
-  }
-}
-
-@media (min-width: 768px) {
-  .jumbotron {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-}
-
 /* Carousel base class */
 .carousel {
+  padding: 0;
+  margin-top: 0;
   margin-bottom: 4rem;
 }
 /* Since positioning the image, we need to help out the caption */
@@ -94,10 +77,6 @@ label {
   height: 32rem;
 }
 
-h3 {
-  padding: 35.5px;
-  color: black;
-}
 .carousel-inner p {
   color: black;
   font-weight: bold;
