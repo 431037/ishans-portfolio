@@ -59,6 +59,7 @@ app.use(passport.session());
 
 // Creating a instance of a user model
 const userModel = require("./server/models/User");
+const {get} = require("jquery");
 
 // Import user model
 const User = userModel.User;
