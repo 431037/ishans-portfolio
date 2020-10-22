@@ -78,6 +78,12 @@ app.use(function (req, res, next) {
 app.use("/", require("./server/routes/index"));
 app.use("/client", require("./server/routes/client"));
 
+// Routes that will give us a 404
+app.use(function (req, res, next) {
+  res.status(404).send(`No root named : ${req.originalUrl}`);
+  next();
+});
+
 // Setting port to listen too
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, console.log(`Listening on http://localhost:${PORT}`));
