@@ -67,7 +67,6 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-// Global variables
 app.use(function (req, res, next) {
   res.locals.auth = req.isAuthenticated(); // I use this in-order to show a log in button or log out button on the nav
   next();
