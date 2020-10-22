@@ -1,9 +1,9 @@
 module.exports = {
   requireAuth: function (req, res, next) {
-    if (!req.isAuthenticated()) {
-      res.redirect("/login");
+    if (req.isAuthenticated()) {
+      return next();
     }
-    next();
+    res.redirect("/login");
   },
   forwardAuth: function (req, res, next) {
     if (!req.isAuthenticated()) {
