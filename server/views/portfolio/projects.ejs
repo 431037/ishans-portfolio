@@ -7,41 +7,33 @@
   
 <div class="container">
     <!--Creating a Carousel With 2 indexes-->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin: 0;">
         
         <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         </ol>
 
-        <div class="carousel-inner">
-            
-            <div class="carousel-item active">
-                <img src="/assets/images/ServoMotor.jpeg" alt="ServoMotor" style="width:100%">
-                <div class="container">
-                    <div class="carousel-caption text-center" id="carousel">
-                        <h1>Servo motor</h1>
-                        <p>I used a PIC24HJ128GP502 Microcontroller to control a servomotor (2018)</p>
-                        <a href="/assets/images/ServoMotor.jpeg" target="_blank"><p>Link</p></a>
-                    </div>
+        <div class="container">
+            <div class="carousel-inner text-center" style="margin: 1;">
+                <div class="carousel-item active">
+                        <div class="carousel-caption text-center" id="carousel">
+                            <h1>Servo motor</h1>
+                            <a href="/assets/images/ServoMotor.jpeg" target="_blank"><p>Link</p></a>
+                        </div>
                 </div>
-            </div>
-
-            <div class="carousel-item">
-                <img src="/assets/images/temperature.jpeg" alt="temperature" style="width:100%">
-                <div class="container">
-                    <div class="carousel-caption"id="carousel">
-                        <h1>Temperature Sensor.</h1>
-                        <p>Using the same microchip, I used programmed it to read from temperature sensor(BJT) (2017)</p>
-                        <a href="/assets/images/temperature.jpeg" target="_blank"><p>Link</p></a>
-                     </div>
+                <div class="carousel-item">
+                        <div class="carousel-caption"id="carousel">
+                            <h1>Temperature Sensor.</h1>
+                            <a href="/assets/images/temperature.jpeg" target="_blank"><p>Link</p></a>
+                         </div>
                 </div>
-            </div>
+        </div>
+        
 
-            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+
+
+
         
         </div>
     </div>
